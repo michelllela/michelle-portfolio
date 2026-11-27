@@ -999,3 +999,501 @@ button:hover,
 
 }
 
+/* ========================================
+   PORTFOLIO DESIGN REFINEMENT
+   Light Blue Professional Theme
+======================================== */
+
+/* ---------- GLOBAL IMPROVEMENT ---------- */
+
+body {
+    background:
+        radial-gradient(
+            circle at 90% 5%,
+            rgba(37, 99, 235, 0.055),
+            transparent 28%
+        ),
+        var(--background);
+}
+
+section {
+    scroll-margin-top: 85px;
+}
+
+.about h2,
+.projects h2,
+.certifications h2,
+.experience h2,
+.education h2,
+.contact h2 {
+    font-size: clamp(32px, 4vw, 44px);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    color: var(--navy);
+    margin-bottom: 25px;
+}
+
+.section-label {
+    display: inline-block;
+    padding: 7px 13px;
+    background: #eff6ff;
+    border-radius: 30px;
+    letter-spacing: 2px;
+}
+
+/* ---------- NAVBAR ---------- */
+
+.navbar {
+    box-shadow: 0 4px 25px rgba(15, 23, 42, 0.035);
+}
+
+.logo {
+    transition: color 0.3s ease;
+}
+
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--primary);
+    border-radius: 5px;
+
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+    position: relative;
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(37, 99, 235, 0.12),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(96, 165, 250, 0.08),
+            transparent 28%
+        ),
+        var(--background);
+}
+
+.hero-content {
+    gap: 80px;
+}
+
+.hero-label {
+    padding: 8px 14px;
+    background: #eff6ff;
+    border-radius: 30px;
+}
+
+.hero h1 {
+    letter-spacing: -2.5px;
+}
+
+.hero-description {
+    max-width: 550px;
+}
+
+.hero-image img {
+    border-radius: 28px;
+    box-shadow:
+        0 25px 60px rgba(15, 23, 42, 0.13),
+        0 0 0 1px rgba(37, 99, 235, 0.08);
+}
+
+/* ---------- ABOUT ---------- */
+
+.about {
+    background: #ffffff;
+}
+
+.about-description {
+    max-width: 780px;
+}
+
+.skill-list span {
+    border-radius: 30px;
+    padding: 10px 17px;
+}
+
+/* ---------- EDUCATION ---------- */
+/* Sesuai struktur HTML aktual:
+   education-timeline > education-card
+*/
+
+.education {
+    padding: 110px 0;
+    background: var(--background);
+}
+
+.education h2 {
+    margin-bottom: 40px;
+}
+
+.education-timeline {
+    position: relative;
+    max-width: 850px;
+    padding-left: 30px;
+}
+
+/* Garis timeline */
+
+.education-timeline::before {
+    content: "";
+    position: absolute;
+
+    left: 8px;
+    top: 12px;
+    bottom: 12px;
+
+    width: 3px;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        to bottom,
+        #60a5fa,
+        #2563eb,
+        #a78bfa
+    );
+}
+
+/* Kartu pendidikan */
+
+.education-card {
+    position: relative;
+
+    margin-bottom: 18px;
+    padding: 27px 30px;
+
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.035);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Titik timeline */
+
+.education-card::before {
+    content: "";
+    position: absolute;
+
+    left: -30px;
+    top: 30px;
+
+    width: 12px;
+    height: 12px;
+
+    background: #ffffff;
+    border: 3px solid var(--primary);
+    border-radius: 50%;
+
+    z-index: 2;
+}
+
+.education-card:hover {
+    transform: translateX(5px);
+
+    border-color: #bfdbfe;
+
+    box-shadow:
+        0 15px 35px rgba(37, 99, 235, 0.08);
+}
+
+.education-year {
+    display: inline-block;
+
+    margin-bottom: 12px;
+    padding: 6px 13px;
+
+    color: var(--primary);
+    background: #eff6ff;
+
+    border: 1px solid #dbeafe;
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.education-card h3 {
+    color: var(--navy);
+    font-size: 19px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.education-degree {
+    color: var(--text);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.education-location {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.education-grade {
+    display: inline-block;
+
+    margin-top: 12px;
+    padding: 6px 12px;
+
+    color: #15803d;
+    background: #f0fdf4;
+
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* ---------- PROJECTS ---------- */
+
+.projects {
+    background: #ffffff;
+}
+
+.project-grid {
+    align-items: stretch;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 20px;
+    padding: 28px;
+
+    box-shadow:
+        0 8px 30px rgba(15, 23, 42, 0.04);
+}
+
+.project-card:hover {
+    border-color: #bfdbfe;
+
+    box-shadow:
+        0 20px 45px rgba(37, 99, 235, 0.10);
+}
+
+.project-image,
+.project-gallery {
+    border-radius: 15px;
+    background: #f1f5f9;
+}
+
+.project-image img,
+.project-gallery img {
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img,
+.project-card:hover .project-gallery img {
+    transform: scale(1.04);
+}
+
+.project-number {
+    border-radius: 30px;
+}
+
+.project-tags span {
+    border-radius: 30px;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 22px;
+
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--primary-dark);
+}
+
+/* ---------- CERTIFICATIONS ---------- */
+
+.certifications {
+    background: var(--background);
+}
+
+.certification-grid {
+    align-items: stretch;
+}
+
+.certification-card {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 20px;
+    padding: 28px;
+
+    box-shadow:
+        0 8px 30px rgba(15, 23, 42, 0.04);
+}
+
+.certification-card:hover {
+    border-color: #bfdbfe;
+
+    box-shadow:
+        0 18px 40px rgba(37, 99, 235, 0.08);
+}
+
+.certification-image {
+    border-radius: 15px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.certification-icon {
+    border-radius: 14px;
+}
+
+.certification-card h3 {
+    line-height: 1.5;
+}
+
+.certification-link {
+    align-self: flex-start;
+    border-radius: 30px;
+}
+
+/* ---------- EXPERIENCE ---------- */
+
+.experience {
+    background: #ffffff;
+}
+
+.experience-card {
+    border-radius: 22px;
+    padding: 32px;
+
+    box-shadow:
+        0 8px 30px rgba(15, 23, 42, 0.04);
+}
+
+.experience-card:hover {
+    border-color: #bfdbfe;
+
+    box-shadow:
+        0 18px 40px rgba(37, 99, 235, 0.08);
+}
+
+.experience-period {
+    border-radius: 30px;
+}
+
+.experience-tags span {
+    border-radius: 30px;
+}
+
+/* ---------- CONTACT ---------- */
+
+.contact {
+    background:
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(37, 99, 235, 0.08),
+            transparent 45%
+        ),
+        #ffffff;
+}
+
+.contact .btn-primary,
+.contact .btn-secondary {
+    border-radius: 30px;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+    background: var(--navy);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 900px) {
+
+    .hero-content {
+        gap: 45px;
+    }
+
+    .education-card {
+        padding: 24px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        letter-spacing: -1.2px;
+    }
+
+    .education {
+        padding: 75px 0;
+    }
+
+    .education-timeline {
+        padding-left: 25px;
+    }
+
+    .education-timeline::before {
+        left: 6px;
+    }
+
+    .education-card {
+        padding: 22px;
+        border-radius: 15px;
+    }
+
+    .education-card::before {
+        left: -26px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .education-card h3 {
+        font-size: 16px;
+    }
+
+    .education-location {
+        font-size: 12px;
+    }
+
+    .project-card,
+    .certification-card,
+    .experience-card {
+        border-radius: 17px;
+    }
+
+}
+
