@@ -855,3 +855,101 @@ button:hover,
         transition: none;
     }
 }
+
+/* =========================
+   EDUCATION SECTION
+========================= */
+
+.education {
+    padding: 100px 0;
+}
+
+.education-timeline {
+    position: relative;
+    max-width: 850px;
+    margin: 50px auto 0;
+    padding-left: 30px;
+    border-left: 2px solid var(--accent-color);
+}
+
+.education-card {
+    position: relative;
+    margin-bottom: 35px;
+    padding: 30px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    transition: transform 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.education-card::before {
+    content: "";
+    position: absolute;
+    left: -39px;
+    top: 35px;
+    width: 14px;
+    height: 14px;
+    background: var(--accent-color);
+    border-radius: 50%;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.education-year {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--accent-color);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.education-card h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.education-degree {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.education-location {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.education-grade {
+    margin-top: 10px;
+    color: var(--accent-color);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+
+    .education {
+        padding: 70px 0;
+    }
+
+    .education-timeline {
+        padding-left: 25px;
+    }
+
+    .education-card {
+        padding: 22px;
+    }
+
+    .education-card::before {
+        left: -34px;
+    }
+
+    .education-card h3 {
+        font-size: 19px;
+    }
+
+}
