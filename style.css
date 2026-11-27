@@ -1,0 +1,857 @@
+/* ========================================
+   1. GLOBAL STYLE
+======================================== */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --navy: #0f172a;
+    --text: #475569;
+    --muted: #64748b;
+    --background: #f8fafc;
+    --white: #ffffff;
+    --border: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--navy);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+section {
+    overflow: hidden;
+}
+
+
+/* ========================================
+   2. NAVBAR
+======================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--navy);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+
+/* ========================================
+   3. HERO SECTION
+======================================== */
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(37, 99, 235, 0.08),
+            transparent 30%
+        ),
+        var(--background);
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+    padding: 70px 0;
+}
+
+.hero-text {
+    flex: 1.2;
+}
+
+.hero-label {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.12;
+    letter-spacing: -2px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero-description {
+    max-width: 580px;
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--muted);
+    margin-bottom: 35px;
+}
+
+
+/* Hero Buttons */
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--white);
+    color: var(--navy);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-3px);
+}
+
+
+/* Hero Profile Photo */
+
+.hero-image {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 300px;
+    height: 370px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 24px;
+    border: 6px solid var(--white);
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.4s ease;
+}
+
+.hero-image img:hover {
+    transform: translateY(-5px);
+}
+
+
+/* ========================================
+   4. SECTION GENERAL STYLE
+======================================== */
+
+.section-label {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.about h2,
+.projects h2,
+.contact h2 {
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+    color: var(--navy);
+    margin-bottom: 22px;
+}
+
+
+/* ========================================
+   5. ABOUT SECTION
+======================================== */
+
+.about {
+    padding: 110px 0;
+    background-color: var(--white);
+}
+
+.about-description {
+    max-width: 800px;
+    font-size: 16px;
+    line-height: 1.9;
+    color: var(--muted);
+    margin-bottom: 50px;
+}
+
+.skills h3 {
+    font-size: 22px;
+    color: var(--navy);
+    margin-bottom: 22px;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-list span {
+    background-color: #eff6ff;
+    color: var(--primary);
+    border: 1px solid #dbeafe;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.skill-list span:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+
+/* ========================================
+   6. PROJECTS SECTION
+======================================== */
+
+.projects {
+    padding: 110px 0;
+    background-color: var(--background);
+}
+
+.projects-description {
+    max-width: 650px;
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 50px;
+}
+
+
+/* Project Grid */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* Project Card */
+
+.project-card {
+    background-color: var(--white);
+    padding: 32px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.03);
+    transition: all 0.35s ease;
+
+    /* Perbaikan agar gambar tidak keluar dari kartu */
+    min-width: 0;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: #bfdbfe;
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+}
+
+.project-number {
+    display: inline-block;
+    color: var(--primary);
+    background-color: #eff6ff;
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+.project-card h3 {
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+
+/* Project Tags */
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-tags span {
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 7px 11px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* ========================================
+   7. CONTACT SECTION
+======================================== */
+
+.contact {
+    padding: 110px 0;
+    text-align: center;
+    background-color: var(--white);
+}
+
+.contact .container {
+    max-width: 750px;
+}
+
+.contact p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: var(--muted);
+    margin-bottom: 35px;
+}
+
+
+/* ========================================
+   8. FOOTER
+======================================== */
+
+.footer {
+    padding: 28px 0;
+    background-color: var(--navy);
+    color: #cbd5e1;
+    text-align: center;
+    font-size: 13px;
+}
+
+
+/* ========================================
+   9. RESPONSIVE DESIGN
+======================================== */
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .hero-content {
+        gap: 35px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-image img {
+        max-width: 260px;
+        height: 330px;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Smartphone */
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 18px 0;
+    }
+
+    .navbar .container {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 65px 0;
+        gap: 45px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-image {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-image img {
+        max-width: 230px;
+        height: 290px;
+    }
+
+    .about,
+    .projects,
+    .contact {
+        padding: 75px 0;
+    }
+
+    .about-description,
+    .projects-description {
+        font-size: 15px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 25px;
+    }
+}
+
+
+/* ========================================
+   10. CERTIFICATIONS & EXPERIENCE
+======================================== */
+
+.certifications,
+.experience {
+    padding: 100px 0;
+}
+
+.certifications {
+    background: #ffffff;
+}
+
+.experience {
+    background: #f8fafc;
+}
+
+.certifications-description {
+    max-width: 650px;
+    color: #64748b;
+    line-height: 1.8;
+    margin-bottom: 45px;
+}
+
+.certification-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.certification-card,
+.experience-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.certification-card:hover,
+.experience-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(37, 99, 235, 0.08);
+}
+
+.certification-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dbeafe;
+    color: #2563eb;
+    border-radius: 14px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.certification-card h3 {
+    font-size: 19px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.certification-issuer {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.certification-date {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.credential-id {
+    color: #94a3b8;
+    font-size: 12px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    overflow-wrap: anywhere;
+}
+
+.certification-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 11px 16px;
+    background: #2563eb;
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.certification-link:hover {
+    background: #1d4ed8;
+}
+
+
+/* Experience */
+
+.experience-card {
+    max-width: 850px;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.experience-card h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.experience-company {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.experience-period {
+    color: #64748b;
+    font-size: 13px;
+    background: #eff6ff;
+    padding: 9px 13px;
+    border-radius: 8px;
+}
+
+.experience-location {
+    color: #94a3b8;
+    font-size: 13px;
+    margin: 15px 0 20px;
+}
+
+.experience-card ul {
+    padding-left: 20px;
+    color: #64748b;
+    line-height: 1.9;
+}
+
+.experience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.experience-tags span {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+
+/* Responsive Certifications & Experience */
+
+@media (max-width: 700px) {
+    .certification-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certifications,
+    .experience {
+        padding: 70px 0;
+    }
+
+    .certification-card,
+    .experience-card {
+        padding: 24px;
+    }
+}
+
+
+/* ========================================
+   11. PROJECT & CERTIFICATION IMAGES
+======================================== */
+
+/* Gambar proyek SIPA */
+
+.project-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.project-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* Galeri gambar Purnama */
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.project-gallery img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* Gambar sertifikasi */
+
+.certification-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    background: #f1f5f9;
+}
+
+.certification-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+/* Membatasi gambar agar tidak keluar dari kartu */
+
+.project-card img,
+.certification-card img {
+    max-width: 100%;
+}
+
+
+/* Pengaturan gambar untuk layar kecil */
+
+@media (max-width: 600px) {
+    .project-image {
+        height: 200px;
+    }
+
+    .project-gallery {
+        height: 200px;
+    }
+
+    .certification-image {
+        height: 180px;
+    }
+}
+
+/* Smooth scrolling saat klik menu navigasi */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animasi muncul saat elemen terlihat */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animasi kartu proyek */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Animasi tombol */
+button,
+.btn,
+.button {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+button:hover,
+.btn:hover,
+.button:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* Menghormati pengaturan pengguna yang mengurangi animasi */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .reveal,
+    .project-card,
+    button,
+    .btn,
+    .button {
+        transition: none;
+    }
+}
